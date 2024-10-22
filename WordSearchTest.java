@@ -26,6 +26,7 @@ public class WordSearchTest{
 
             switch (input) {
                 case 1:
+                    myWordSearch = new WordSearch();
                     myWordSearch.userPrompt();
                     break;
                 case 2:
