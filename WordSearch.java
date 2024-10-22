@@ -15,12 +15,12 @@ public class WordSearch {
     //fills array "words" with words from user
     public void userPrompt() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Please enter up to 8 words up to 15 char for array: ");
+        System.out.println("Please enter up to 8 words, each with up to 15 characters: ");
         String wordString;
         do {//put words entered by user to arrayList
             wordString = input.next().toUpperCase();
             if(wordString.length() > 15){
-                System.out.println("Enter word with less then 15 char!");
+                System.out.println("Enter a word with fewer than 15 characters!");
             } else {    
                 if (wordString.contains("DONE")){
                 } else {
@@ -64,7 +64,7 @@ public class WordSearch {
         for (int i = 0; i < words.size(); i++) {
             String word = words.get(i);
 
-            switch (i) {
+            switch (i) {//options on placemet words in to array
                 case 0:
                     for (int o = 0; o < word.length(); o++){
                         searchArray[i][o] = word.charAt(o);

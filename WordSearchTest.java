@@ -9,8 +9,8 @@ public class WordSearchTest{
         int input = 0;
         do {
             System.out.println("'1' - Create a crossword puzzle");
-            System.out.println("'2' - View a crossword puzzle with solutions");
-            System.out.println("'3' - View a crossword puzzle without solutions");
+            System.out.println("'2' - View the solution");
+            System.out.println("'3' - View the crossword puzzle");
             System.out.println("'4' - Quit");
 
             boolean flag = false;
@@ -40,10 +40,10 @@ public class WordSearchTest{
                     myWordSearch.printArray();
                     break;
                 case 4:
-                    System.out.println("It were nice to see you!");
+                    System.out.println("It was nice to see you!");
                     break;
                 default:
-                    System.out.println("Enter Valid Value!");
+                    System.out.println("Enter a Valid Value!");
                     break;
             }
 
