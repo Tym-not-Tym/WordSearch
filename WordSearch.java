@@ -19,9 +19,13 @@ public class WordSearch {
         String wordString;
         do {//put words entered by user to arrayList
             wordString = input.next().toUpperCase();
-            if (wordString.contains("DONE")){
-            } else {
-                words.add(wordString);
+            if(wordString.length() > 15){
+                System.out.println("Enter word with less then 15 char!");
+            } else {    
+                if (wordString.contains("DONE")){
+                } else {
+                    words.add(wordString);
+                }
             }
         }
         while (!wordString.contains("DONE") && words.size() < 8);      
