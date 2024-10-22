@@ -1,3 +1,8 @@
+/* Tymofiy Grebenyuk
+ * Assignment 1: Word Search Generator
+ * CS 145
+ * This program will play word search game.
+ */
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
