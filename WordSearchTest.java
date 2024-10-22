@@ -7,6 +7,7 @@ public class WordSearchTest{
         WordSearch myWordSearch = new WordSearch();
         Scanner scn = new Scanner(System.in);
         int input = 0;
+        myWordSearch.printIntro();
         do {
             System.out.println("'1' - Create a crossword puzzle");
             System.out.println("'2' - View the solution");
@@ -46,7 +47,6 @@ public class WordSearchTest{
                     System.out.println("Enter a Valid Value!");
                     break;
             }
-
         } while (input != 4);
     }
 }

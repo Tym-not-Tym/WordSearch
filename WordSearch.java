@@ -2,8 +2,6 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-
 public class WordSearch {
     private static final int ROWS_AR = 30;
     private static final int COLUMNS_AR = 30;
@@ -111,10 +109,14 @@ public class WordSearch {
                     }
                     break;
             }
-
         }
-    }
+    } 
     
+    public void printIntro() {
+        System.out.println("Welcome to the Word Search Challenge!\n");
+        System.out.println("Test your vocabulary and observation skills");
+        System.out.println("by finding hidden words in a grid of letters.\n");
+    }
 }
 
 
