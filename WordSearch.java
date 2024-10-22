@@ -24,7 +24,7 @@ public class WordSearch {
                 words.add(wordString);
             }
         }
-        while (!wordString.contains("DONE") || words.size() < 8);      
+        while (!wordString.contains("DONE") && words.size() < 8);      
     }
 
     public void printArray() {//Print an array

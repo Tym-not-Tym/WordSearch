@@ -14,7 +14,7 @@ public class WordSearchTest{
             System.out.println("'4' - Quit");
 
             boolean flag = false;
-            do{
+            do{//input validation for int
                 try {
                     input = scn.nextInt();
                     flag = true;
