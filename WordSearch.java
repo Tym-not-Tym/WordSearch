@@ -9,14 +9,13 @@ public class WordSearch {
     private static final int COLUMNS_AR = 30;
     private static final SecureRandom randomNumbers = new SecureRandom();
 
-
-    char[][] solutionArray = new char[ROWS_AR][COLUMNS_AR];
     char[][] searchArray = new char[ROWS_AR][COLUMNS_AR];
     ArrayList<String> words = new ArrayList<String>();
 
-    public void arrayWithWords() {
+    //fills array "words" with words from user
+    public void userPrompt() {
         Scanner input = new Scanner(System.in);
-        System.out.print("Please enter up to 8 words up to 15 char for array: ");
+        System.out.println("Please enter up to 8 words up to 15 char for array: ");
         String wordString;
         do {//put words entered by user to arrayList
             wordString = input.next().toUpperCase();
@@ -25,8 +24,38 @@ public class WordSearch {
                 words.add(wordString);
             }
         }
-        while (!wordString.contains("DONE"));
+        while (!wordString.contains("DONE") || words.size() < 8);      
+    }
 
+    public void printArray() {//Print an array
+        //for (int c = 0; c < COLUMNS_AR; i++)
+        for (int r = 0; r < ROWS_AR; r++)  {
+            for (int c = 0; c < COLUMNS_AR; c++) {
+                System.out.print(searchArray[r][c] + " ");
+            }
+            System.out.println();
+        }
+        
+    }
+    
+    public void fillUpArrayWithDot() {
+        for(int r = 0; r < ROWS_AR; r++) {
+            for(int c = 0; c < COLUMNS_AR; c++) {
+                searchArray[r][c] = '.';
+            }
+        }
+    }
+
+    public void fillUpArrayRandom() {
+        for(int r = 0; r < ROWS_AR; r++) {
+            for(int c = 0; c < COLUMNS_AR; c++) {
+                int ranNum = randomNumbers.nextInt(65, 90);
+                searchArray[r][c] = (char) ranNum;
+            }
+        }
+    }
+
+    public void fillArrayWithWords() {
         //take words from arrayList and put it char array
         for (int i = 0; i < words.size(); i++) {
             String word = words.get(i);
@@ -67,44 +96,18 @@ public class WordSearch {
                     }
                     break;
                 case 6:
-                    for (int o = 0; o > word.length(); o++){
-                        searchArray[i][o] = word.charAt(o);
+                    for (int o = 0; o < word.length(); o++){
+                        searchArray[i + 4][o + 14] = word.charAt(o);
                     }
                     break;
                 case 7:
-
+                    int f = 0;
+                    for (int o = ROWS_AR - 17; o < ROWS_AR - 17 + word.length(); o++){
+                        searchArray[o][o - 12] = word.charAt(f++);
+                    }
                     break;
             }
 
-        }
-        
-    }
-
-    public void printArray() {
-        //for (int c = 0; c < COLUMNS_AR; i++)
-        for (int r = 0; r < ROWS_AR; r++)  {
-            for (int c = 0; c < COLUMNS_AR; c++) {
-                System.out.print(searchArray[r][c] + " ");
-            }
-            System.out.println();
-        }
-        
-    }
-    
-    public void fillUpArrayWithDot() {
-        for(int r = 0; r < ROWS_AR; r++) {
-            for(int c = 0; c < COLUMNS_AR; c++) {
-                searchArray[r][c] = '.';
-            }
-        }
-    }
-
-    public void fillUpArrayRandom() {
-        for(int r = 0; r < ROWS_AR; r++) {
-            for(int c = 0; c < COLUMNS_AR; c++) {
-                int ranNum = randomNumbers.nextInt(65, 90);
-                searchArray[r][c] = (char) ranNum;
-            }
         }
     }
     
